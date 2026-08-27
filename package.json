@@ -1,0 +1,22 @@
+{
+  "name": "proyecto-nosql",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "start": "node index.js",
+  "dev": "nodemon index.js",
+  "seed": "node ./seeds/movies.seed.js"
+  },
+  "keywords": ["movies", "nosql", "mongodb"],
+  "author": "Noa Maximilian Tóth-Égetö",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.9.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+}
