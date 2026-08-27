@@ -1,5 +1,4 @@
 const express = require('express')
-const mongoose = require('mongoose')
 const {conecta} = require('./utils/connect')
 const router = require('./routes/movie.routes')
 
@@ -8,8 +7,6 @@ const router = require('./routes/movie.routes')
 conecta()
 
 const server = express()
-
-const Movie = require('./models/Movies')
 
 const PORT = process.env.PORT || 3001
 

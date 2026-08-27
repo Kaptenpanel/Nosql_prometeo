@@ -111,7 +111,7 @@ router.put('/movies/id/:id/mod', async (req,res) => {
 
 router.delete('/movies/id/:id/del', async (req,res) => {
     const id = req.params.id
-    try { const movie = await Movie.findByIdAndDelete(id, req.body)
+    try { const movie = await Movie.findByIdAndDelete(id)
     if (movie) {
         return res.status(200).json('pelicula con el id: ' + id + ' borrado')
     } else {
