@@ -66,6 +66,7 @@ router.get('/movies/genre/:genre', async (req,res) => {
 
 router.get('/movies/year/:year', async (req,res) => {
     const {year} = req.params;
+    year = Number(year)
     try {
         const movieByYear = await Movie.find({year:{$gte:year}});
         return res.status(200).json(movieByYear)
@@ -94,7 +95,7 @@ router.post('/movies/newmovie', async (req,res) => {
 router.put('/movies/id/:id/mod', async (req,res) => {
     const id = req.params.id;
 	try {
-		const movie = await Movie.findByIdAndUpdate(id, req.body, {new: true})
+		const movie = await Movie.findByIdAndUpdate(id, req.body, {new: true}, {runValidators:true})
 		if (movie) {
 			return res.status(200).json(movie);
 		} else {
